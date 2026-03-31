@@ -9,6 +9,7 @@ import { generateReport } from './analyzers/analysis-engine.js';
 import { renderTerminalReport } from './reporters/terminal-reporter.js';
 import { renderJsonReport } from './reporters/json-reporter.js';
 import { discoverClaudeCodeSessions } from './utils/file-discovery.js';
+import { runInteractive } from './interactive.js';
 import type { Transcript, Session } from './types/transcript.js';
 
 const program = new Command();
@@ -16,7 +17,11 @@ const program = new Command();
 program
   .name('aire')
   .description('AI Report for Engineers — Evaluate AI-assisted workflow quality')
-  .version('1.0.0');
+  .version('1.0.0')
+  .action(async () => {
+    // No subcommand → launch interactive mode
+    await runInteractive();
+  });
 
 program
   .command('analyze')

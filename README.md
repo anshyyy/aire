@@ -24,6 +24,18 @@ npx tsx src/index.ts <command>
 
 ## Usage
 
+### Interactive mode
+
+```bash
+# Launch the interactive TUI — no arguments needed
+npx aire
+```
+
+The interactive mode lets you:
+- Browse and pick sessions from your local `~/.claude/` directory
+- Select multiple sessions for analysis or comparison
+- Enter engineer names, toggle verbose mode, and save reports — all guided by prompts
+
 ### Analyze a transcript
 
 ```bash
